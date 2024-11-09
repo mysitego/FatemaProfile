@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلوماتي</title>
+    <style>
+        body {
+            background-color: #40E0D0; /* لون الصفحة تركواز */
+            color: black; /* لون النص الأسود */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            opacity: 0;
+            animation: slideIn 2s forwards;
+        }
+
+        .name:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .name:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .name:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        .name:nth-child(4) {
+            animation-delay: 6s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        button {
+            background-color: #008B8B; /* زر تركواز غامق */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #006F6F;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .images img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .info {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="name">فاطمه</div>
+    <div class="name">يحيى</div>
+    <div class="name">محمد</div>
+    <div class="name">شمس الدين</div>
+
+    <div>
+        <button onclick="showInfo()">معلوماتي</button>
+        <button onclick="showImages()">عرض الصور الطبيعية</button>
+    </div>
+
+    <div id="info" class="info" style="display: none;">
+        <p>عمري: 19 سنة</p>
+        <p>أدرس جرافيك مستوى ثاني في كلية الرازي للعلوم الطبية والتقنية</p>
+    </div>
+
+    <div id="images" class="images" style="display: none;">
+        <img src="1.jpg" alt="صورة طبيعية 1">
+        <img src="2.jpg" alt="صورة طبيعية 2">
+        <img src="3.jpg" alt="صورة طبيعية 3">
+    </div>
+
+    <script>
+        function showInfo() {
+            document.getElementById('info').style.display = 'block';
+        }
+
+        function showImages() {
+            document.getElementById('images').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
